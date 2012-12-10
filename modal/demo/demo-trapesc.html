@@ -21,7 +21,7 @@
 <body>
 
 
-        <p>This demo will close if the ESC key is hit</p>
+        <p>This demo will show an alert if the ESC key is hit</p>
 	<button data-action-type="openModal">Open Modal</button>
 	<x-modal id="modal_demo" overlay hide esc-hide>
 		<p>
@@ -63,6 +63,13 @@ xtag.addEvent(document, 'click:delegate(button)', function(e){
 	}
 });
 
+document.getElementById('modal_demo').addEventListener(
+                                      'modalhide', function(e) {
+    e.preventDefault();
+    alert('Escape key seen!');
+  }
+
+);
 
 
 </script>
